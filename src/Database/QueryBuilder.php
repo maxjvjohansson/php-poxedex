@@ -30,27 +30,27 @@ class QueryBuilder
 
     public function where(string $column, string $operator, mixed $value): static
     {
-        $this->query .= sprintf(' WHERE %s %s %s', $column, $operator, $value);
+        $this->query = sprintf('%s WHERE %s %s %s', $this->query, $column, $operator, $value);
 
         return $this;
     }
 
     public function groupBy(string $column): static
     {
-        $this->query .= sprintf(' GROUP BY %s', $column);
+        $this->query = sprintf('%s GROUP BY %s', $this->query, $column);
         return $this;
     }
 
     public function orderBy(string $column, string $direction): static
     {
-        $this->query .= sprintf(' ORDER BY %s %s', $column, $direction);
+        $this->query = sprintf('%s ORDER BY %s %s', $this->query, $column, $direction);
 
         return $this;
     }
 
     public function limit(int $count): static
     {
-        $this->query .= sprintf(' LIMIT %d', $count);
+        $this->query = sprintf('%s LIMIT %d', $this->query, $count);
 
         return $this;
     }
