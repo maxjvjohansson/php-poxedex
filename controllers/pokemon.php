@@ -11,8 +11,8 @@ function formatPokemonName(string $name): string
     $name = strtolower($name);
     $name = str_replace(' ', '-', $name);
     $name = str_replace(['♀', '♂'], ['-f', '-m'], $name);
-    $name = str_replace('.', '', $name);
+    $name = str_replace(['.', "’"], '', $name);
     return $name;
 }
 
-require __DIR__ . '/../views/pokemon.view.php';
+require view('pokemon');

@@ -4,5 +4,8 @@ declare(strict_types=1);
 
 function view(string $name): string
 {
-    return __DIR__ . '/';
+    $baseDir = __DIR__ . '/../views/';
+    $filePath = $baseDir . $name . '.view.php';
+
+    return $filePath;
 }
