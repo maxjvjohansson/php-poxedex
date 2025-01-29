@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Database;
 
 use PDO;
+use App\Exceptions\NotFoundHttpException;
 
 class QueryBuilder
 {
@@ -58,6 +59,11 @@ class QueryBuilder
     public function first(): object
     {
         $result = $this->limit(1)->get();
+
+        if (empty($result)) {
+            throw new NotFoundHttpException("404 Pokémon Not Found");
+        }
+
         return reset($result);
     }
 

@@ -17,10 +17,10 @@ class Router
         $this->routes = $routes;
     }
 
-    public function direct(string $uri)
+    public function direct(string $uri): string
     {
         if (!array_key_exists($uri, $this->routes)) {
-            throw new NotFoundHttpException('No route defined for this URI.');
+            throw new NotFoundHttpException('404 Page Not Found');
         }
         return $this->routes[$uri];
     }

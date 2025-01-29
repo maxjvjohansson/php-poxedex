@@ -16,5 +16,6 @@ try {
     $newUri = $router->direct(Request::uri());
     require $newUri;
 } catch (NotFoundHttpException $nfhe) {
-    echo $nfhe->getMessage();
+    http_response_code(404);
+    require 'views/404.view.php';
 }
