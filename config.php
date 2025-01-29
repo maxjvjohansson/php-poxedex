@@ -8,9 +8,9 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 return [
-    'driver' => $_ENV['DB_DRIVER'] ?? 'mysql',
-    'host' => $_ENV['DB_HOST'] ?? '127.0.0.1',
-    'database' => $_ENV['DB_DATABASE'] ?? '',
-    'user' => $_ENV['DB_USER'] ?? '',
-    'password' => $_ENV['DB_PASSWORD'] ?? '',
+    'driver' => $_ENV['DATABASE_DRIVER'] ?? 'mysql',
+    'host' => $_ENV['DATABASE_HOST'] ?? '127.0.0.1',
+    'database' => $_ENV['DATABASE_NAME'] ?? '',
+    'user' => $_ENV['DATABASE_USER'] ?? '',
+    'password' => $_ENV['DATABASE_PASSWORD'] ?? '',
 ];
