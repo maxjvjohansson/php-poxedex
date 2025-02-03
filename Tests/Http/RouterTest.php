@@ -14,7 +14,7 @@ class RouterTest extends TestCase
             '/' => 'controllers/pokedex.php',
         ]);
 
-        $this->assertSame('controllers/pokedex.php', $router->direct('/'));
+        $this->assertSame('controllers/pokedx.php', $router->direct('/'));
     }
 
     public function test_route_not_found()
